@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1474862101 source:c:\users\½²©_§»\posd2016f\hw1\main.cpp
+	"..\cppunitlite\TestHarness.h"
+	"utShapes.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\simplestring.h
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\testresult.h
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\failure.h
+	"SimpleString.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\testregistry.h
+
+1475828362 c:\users\½²©_§»\posd2016f\hw1\include\utshapes.h
+	"..\..\cppunitlite\TestHarness.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"Shape.h"
+	"ComboShape.h"
+	<vector>
+	<iostream>
+
+1475128067 c:\users\½²©_§»\posd2016f\hw1\include\circle.h
+	"Shape.h"
+
+1475587453 c:\users\½²©_§»\posd2016f\hw1\include\shape.h
+	<vector>
+
+1475662594 source:c:\users\½²©_§»\posd2016f\hw1\src\circle.cpp
+	"Circle.h"
+
+1475748778 source:c:\users\½²©_§»\posd2016f\hw1\src\shape.cpp
+	"Shape.h"
+	<algorithm>
+
+1474880635 source:c:\users\½²©_§»\posd2016f\hw1\src\rectangle.cpp
+	"Rectangle.h"
+
+1474880933 c:\users\½²©_§»\posd2016f\hw1\include\rectangle.h
+	"Shape.h"
+
+1475140704 source:c:\users\½²©_§»\posd2016f\hw1\src\triangle.cpp
+	"Triangle.h"
+	<math.h>
+	<iostream>
+
+1475072090 c:\users\½²©_§»\posd2016f\hw1\include\triangle.h
+	"Shape.h"
+
+1475662612 source:c:\users\½²©_§»\posd2016f\hw1\comboshape.cpp
+	"ComboShape.h"
+
+1475662783 c:\users\½²©_§»\posd2016f\hw1\comboshape.h
+	<Shape.h>
+
+1475664617 c:\users\½²©_§»\posd2016f\hw1\include\comboshape.h
+	"Shape.h"
+
+1475664576 source:c:\users\½²©_§»\posd2016f\hw1\src\comboshape.cpp
+	"ComboShape.h"
+

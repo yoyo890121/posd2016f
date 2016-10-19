@@ -1,0 +1,172 @@
+# depslib dependency file v1.0
+1474862101 source:c:\users\½²©_§»\posd2016f\hw1\main.cpp
+	"..\cppunitlite\TestHarness.h"
+	"utShapes.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\simplestring.h
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\testresult.h
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\failure.h
+	"SimpleString.h"
+
+1474605874 c:\users\½²©_§»\posd2016f\cppunitlite\testregistry.h
+
+1475828362 c:\users\½²©_§»\posd2016f\hw1\include\utshapes.h
+	"..\..\cppunitlite\TestHarness.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"Shape.h"
+	"ComboShape.h"
+	<vector>
+	<iostream>
+
+1475128067 c:\users\½²©_§»\posd2016f\hw1\include\circle.h
+	"Shape.h"
+
+1475587453 c:\users\½²©_§»\posd2016f\hw1\include\shape.h
+	<vector>
+
+1475662594 source:c:\users\½²©_§»\posd2016f\hw1\src\circle.cpp
+	"Circle.h"
+
+1475748778 source:c:\users\½²©_§»\posd2016f\hw1\src\shape.cpp
+	"Shape.h"
+	<algorithm>
+
+1474880635 source:c:\users\½²©_§»\posd2016f\hw1\src\rectangle.cpp
+	"Rectangle.h"
+
+1474880933 c:\users\½²©_§»\posd2016f\hw1\include\rectangle.h
+	"Shape.h"
+
+1475140704 source:c:\users\½²©_§»\posd2016f\hw1\src\triangle.cpp
+	"Triangle.h"
+	<math.h>
+	<iostream>
+
+1475072090 c:\users\½²©_§»\posd2016f\hw1\include\triangle.h
+	"Shape.h"
+
+1475662612 source:c:\users\½²©_§»\posd2016f\hw1\comboshape.cpp
+	"ComboShape.h"
+
+1475662783 c:\users\½²©_§»\posd2016f\hw1\comboshape.h
+	<Shape.h>
+
+1475664617 c:\users\½²©_§»\posd2016f\hw1\include\comboshape.h
+	"Shape.h"
+
+1475664576 source:c:\users\½²©_§»\posd2016f\hw1\src\comboshape.cpp
+	"ComboShape.h"
+
+1476764977 source:c:\users\½²©_§»\posd2016f\hw3\main.cpp
+	"..\cppunitlite\TestHarness.h"
+	"utShapes.h"
+
+1476849661 c:\users\½²©_§»\posd2016f\hw3\include\utshapes.h
+	"..\..\cppunitlite\TestHarness.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"Shape.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<vector>
+	<iostream>
+
+1476777235 c:\users\½²©_§»\posd2016f\hw3\include\circle.h
+	"Shape.h"
+
+1476780633 c:\users\½²©_§»\posd2016f\hw3\include\shape.h
+	<vector>
+	<string>
+
+1476776673 c:\users\½²©_§»\posd2016f\hw3\include\rectangle.h
+	"Shape.h"
+
+1476779484 c:\users\½²©_§»\posd2016f\hw3\include\triangle.h
+	"Shape.h"
+
+1476777242 source:c:\users\½²©_§»\posd2016f\hw3\src\circle.cpp
+	<sstream>
+	"Circle.h"
+
+1476776703 source:c:\users\½²©_§»\posd2016f\hw3\src\rectangle.cpp
+	<sstream>
+	"Rectangle.h"
+
+1476766800 source:c:\users\½²©_§»\posd2016f\hw3\src\shape.cpp
+	"Shape.h"
+	<algorithm>
+
+1476793001 source:c:\users\½²©_§»\posd2016f\hw3\src\triangle.cpp
+	"Triangle.h"
+	<cmath>
+	<iostream>
+	<sstream>
+
+1476766088 source:c:\users\½²©_§»\posd2016f\hw3\src\combomedia.cpp
+	"ComboMedia.h"
+
+1476785319 c:\users\½²©_§»\posd2016f\hw3\include\combomedia.h
+	<vector>
+	"Media.h"
+
+1476795385 c:\users\½²©_§»\posd2016f\hw3\include\media.h
+	"DescriptionVisitor.h"
+	"AreaVisitor.h"
+	"PerimeterVisitor.h"
+
+1476791026 c:\users\½²©_§»\posd2016f\hw3\include\descriptionvisitor.h
+	"MediaVisitor.h"
+	<string>
+
+1476790220 c:\users\½²©_§»\posd2016f\hw3\include\shapemedia.h
+	"Shape.h"
+	"Media.h"
+
+1476766507 source:c:\users\½²©_§»\posd2016f\hw3\src\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"ShapeMedia.h"
+
+1476766032 source:c:\users\½²©_§»\posd2016f\hw3\src\media.cpp
+	"Media.h"
+
+1476792213 source:c:\users\½²©_§»\posd2016f\hw3\src\shapemedia.cpp
+	"ShapeMedia.h"
+
+1476780405 source:c:\users\½²©_§»\posd2016f\hw3\src\mediavisitor.cpp
+	"MediaVisitor.h"
+
+1476794916 c:\users\½²©_§»\posd2016f\hw3\include\mediavisitor.h
+
+1476794569 c:\users\½²©_§»\posd2016f\hw3\include\areavisitor.h
+	"MediaVisitor.h"
+
+1476795118 source:c:\users\½²©_§»\posd2016f\hw3\src\areavisitor.cpp
+	"AreaVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<iostream>
+
+1476795385 c:\users\½²©_§»\posd2016f\hw3\include\perimetervisitor.h
+	"MediaVisitor.h"
+
+1476795535 source:c:\users\½²©_§»\posd2016f\hw3\src\perimetervisitor.cpp
+	"PerimeterVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<iostream>
+
