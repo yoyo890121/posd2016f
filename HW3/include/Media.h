@@ -4,6 +4,8 @@
 #include "AreaVisitor.h"
 #include "PerimeterVisitor.h"
 
+
+
 class Media {
 public :
     virtual double area() const = 0 ;

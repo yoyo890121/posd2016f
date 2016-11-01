@@ -7,7 +7,7 @@ class ShapeMedia :public Media
 {
 private:
     Shape* shape ;
-public :
+public:
     ShapeMedia( Shape* s ): shape(s) {}
     virtual void accept(MediaVisitor * mv);
     double area() const;

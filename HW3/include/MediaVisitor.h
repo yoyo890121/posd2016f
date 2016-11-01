@@ -9,8 +9,7 @@ class MediaVisitor
     public:
     virtual void visitShapeMedia(ShapeMedia *sm)=0;
     virtual void visitComboMedia(ComboMedia *cm)=0;
-
-    private:
+    virtual void visitComboMedia(ComboMedia *cm, bool start){};
 };
 
 #endif // MEDIAVISITOR_H

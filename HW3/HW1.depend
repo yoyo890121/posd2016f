@@ -170,3 +170,145 @@
 	"ComboMedia.h"
 	<iostream>
 
+1476764977 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\main.cpp
+	"..\cppunitlite\TestHarness.h"
+	"utShapes.h"
+
+1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\simplestring.h
+
+1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testresult.h
+
+1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\failure.h
+	"SimpleString.h"
+
+1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testregistry.h
+
+1478005587 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
+	"..\..\cppunitlite\TestHarness.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	<vector>
+	<iostream>
+	<stack>
+
+1476777235 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\circle.h
+	"Shape.h"
+
+1476780633 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shape.h
+	<vector>
+	<string>
+
+1476776673 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\rectangle.h
+	"Shape.h"
+
+1476779484 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\triangle.h
+	"Shape.h"
+
+1477988674 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemedia.h
+	"Shape.h"
+	"Media.h"
+
+1477906629 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\media.h
+	"DescriptionVisitor.h"
+	"AreaVisitor.h"
+	"PerimeterVisitor.h"
+
+1477648401 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\descriptionvisitor.h
+	"MediaVisitor.h"
+	<string>
+
+1477907265 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediavisitor.h
+
+1477648255 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\areavisitor.h
+	"MediaVisitor.h"
+
+1477648785 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\perimetervisitor.h
+	"MediaVisitor.h"
+
+1477906888 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\combomedia.h
+	<vector>
+	"Media.h"
+
+1476795118 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\areavisitor.cpp
+	"AreaVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<iostream>
+
+1476777242 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\circle.cpp
+	<sstream>
+	"Circle.h"
+
+1476766088 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\combomedia.cpp
+	"ComboMedia.h"
+
+1477649961 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"ShapeMedia.h"
+
+1476766032 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\media.cpp
+	"Media.h"
+
+1476780405 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mediavisitor.cpp
+	"MediaVisitor.h"
+
+1476795535 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\perimetervisitor.cpp
+	"PerimeterVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<iostream>
+
+1476776703 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\rectangle.cpp
+	<sstream>
+	"Rectangle.h"
+
+1476766800 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\shape.cpp
+	"Shape.h"
+	<algorithm>
+
+1476792213 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\shapemedia.cpp
+	"ShapeMedia.h"
+
+1476793001 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\triangle.cpp
+	"Triangle.h"
+	<cmath>
+	<iostream>
+	<sstream>
+
+1477551147 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mediabuilder.cpp
+	"MediaBuilder.h"
+
+1477992930 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediabuilder.h
+	"Media.h"
+
+1478000150 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\combomediabuilder.cpp
+	"ComboMediaBuilder.h"
+	"ComboMedia.h"
+	"ShapeMedia.h"
+
+1477993394 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\combomediabuilder.h
+	"MediaBuilder.h"
+
+1477992277 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\shapemediabuilder.cpp
+	"ShapeMediaBuilder.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+
+1477992276 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemediabuilder.h
+	"MediaBuilder.h"
+

@@ -8,6 +8,7 @@ class ComboMedia : public Media {
 private:
     std::vector<Media*> media;
 public:
+    ComboMedia () {}
     ComboMedia( std::vector<Media*> m ) : media(m) {}
     double area() const {
         double total =0;
@@ -24,9 +25,10 @@ public:
     }
 
     void accept(MediaVisitor *mv) {
+        mv->visitComboMedia(this, true);
         for (Media *m: media)
             m->accept(mv);
-        mv->visitComboMedia(this);
+        mv->visitComboMedia(this, false);
     }
 
     void add (Media *m) {

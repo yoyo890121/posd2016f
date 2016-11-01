@@ -38,26 +38,32 @@
 		<Unit filename="include/AreaVisitor.h" />
 		<Unit filename="include/Circle.h" />
 		<Unit filename="include/ComboMedia.h" />
+		<Unit filename="include/ComboMediaBuilder.h" />
 		<Unit filename="include/DescriptionVisitor.h" />
 		<Unit filename="include/Media.h" />
+		<Unit filename="include/MediaBuilder.h" />
 		<Unit filename="include/MediaVisitor.h" />
 		<Unit filename="include/PerimeterVisitor.h" />
 		<Unit filename="include/Rectangle.h" />
 		<Unit filename="include/Shape.h" />
 		<Unit filename="include/ShapeMedia.h" />
+		<Unit filename="include/ShapeMediaBuilder.h" />
 		<Unit filename="include/Triangle.h" />
 		<Unit filename="include/utShapes.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AreaVisitor.cpp" />
 		<Unit filename="src/Circle.cpp" />
 		<Unit filename="src/ComboMedia.cpp" />
+		<Unit filename="src/ComboMediaBuilder.cpp" />
 		<Unit filename="src/DescriptionVisitor.cpp" />
 		<Unit filename="src/Media.cpp" />
+		<Unit filename="src/MediaBuilder.cpp" />
 		<Unit filename="src/MediaVisitor.cpp" />
 		<Unit filename="src/PerimeterVisitor.cpp" />
 		<Unit filename="src/Rectangle.cpp" />
 		<Unit filename="src/Shape.cpp" />
 		<Unit filename="src/ShapeMedia.cpp" />
+		<Unit filename="src/ShapeMediaBuilder.cpp" />
 		<Unit filename="src/Triangle.cpp" />
 		<Extensions>
 			<code_completion />
