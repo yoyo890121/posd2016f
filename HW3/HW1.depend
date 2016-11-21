@@ -193,7 +193,7 @@
 
 1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testregistry.h
 
-1478005587 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
+1479732068 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
 	"..\..\cppunitlite\TestHarness.h"
 	"Circle.h"
 	"Rectangle.h"
@@ -202,6 +202,7 @@
 	"ComboMedia.h"
 	"ShapeMediaBuilder.h"
 	"ComboMediaBuilder.h"
+	"TextMedia.h"
 	<vector>
 	<iostream>
 	<stack>
@@ -219,29 +220,30 @@
 1476779484 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\triangle.h
 	"Shape.h"
 
-1477988674 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemedia.h
+1478066936 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemedia.h
 	"Shape.h"
 	"Media.h"
 
-1477906629 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\media.h
+1478096796 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\media.h
 	"DescriptionVisitor.h"
 	"AreaVisitor.h"
 	"PerimeterVisitor.h"
 
-1477648401 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\descriptionvisitor.h
+1478079792 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\descriptionvisitor.h
 	"MediaVisitor.h"
 	<string>
 
-1477907265 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediavisitor.h
+1478079755 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediavisitor.h
 
-1477648255 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\areavisitor.h
+1478079163 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\areavisitor.h
 	"MediaVisitor.h"
 
-1477648785 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\perimetervisitor.h
+1478079163 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\perimetervisitor.h
 	"MediaVisitor.h"
 
-1477906888 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\combomedia.h
+1479732115 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\combomedia.h
 	<vector>
+	<algorithm>
 	"Media.h"
 
 1476795118 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\areavisitor.cpp
@@ -257,7 +259,7 @@
 1476766088 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\combomedia.cpp
 	"ComboMedia.h"
 
-1477649961 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\descriptionvisitor.cpp
+1479731999 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\descriptionvisitor.cpp
 	"DescriptionVisitor.h"
 	"ShapeMedia.h"
 
@@ -311,4 +313,13 @@
 
 1477992276 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemediabuilder.h
 	"MediaBuilder.h"
+
+1478066863 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\textmedia.cpp
+	"TextMedia.h"
+
+1478068321 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\textmedia.h
+	<string>
+	"Media.h"
+	"Rectangle.h"
+	"Shape.h"
 

@@ -4,8 +4,6 @@
 #include "AreaVisitor.h"
 #include "PerimeterVisitor.h"
 
-
-
 class Media {
 public :
     virtual double area() const = 0 ;
@@ -13,6 +11,9 @@ public :
     virtual void accept(MediaVisitor*) =0;
     virtual void add(Media * m) {
         throw std::string("Illegal: add on media");
+    }
+    virtual void removeMedia (Media *m) {
+        throw std::string("Illegal");
     }
 };
 

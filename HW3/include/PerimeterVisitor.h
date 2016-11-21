@@ -13,7 +13,7 @@ public:
     double getPerimeter() const {
         return perimeter;
     }
-    //void visitComboMedia(ComboMedia *cm, bool start){};
+
 private:
     double perimeter=0;
 };

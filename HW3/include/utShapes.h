@@ -9,6 +9,7 @@
 #include "ComboMedia.h"
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
+#include "TextMedia.h"
 #include <vector>
 #include <iostream>
 
@@ -248,7 +249,7 @@ TEST (ComboMedia5, MediaBuilder) {
 
     DescriptionVisitor dv;
     mbs.top()->getMedia()->accept(&dv);
-    std::cout << dv.getDescription() << std::endl;
+    //std::cout << dv.getDescription() << std::endl;
 
     CHECK(std::string("combo(r(0 0 4 2) c(0 0 10) combo(r(0 0 2 1) c(0 0 5) ))") == dv.getDescription());
 }
@@ -301,11 +302,74 @@ TEST (ComboMediaBuilder, MediaBuilder)
     Triangle t(0,20,16,32,25,20);
     cmbs.top()->buildShapeMedia(&t);
 
+    Media *m=cmbs.top()->getMedia();
+
     DescriptionVisitor dv;
-    cmbs.top()->getMedia()->accept(&dv);
-    cout << dv.getDescription() << endl;
+    m->accept(&dv);
+    //cout << dv.getDescription() << endl;
 
     CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )") == dv.getDescription());
 }
+
+//3.
+TEST (TextMedia, MediaBuilder)
+{
+    Rectangle r(10,10,10,10);
+    std::string s("Text123");
+    TextMedia tm(&r,s);
+
+    DOUBLES_EQUAL(100,tm.area(),epsilon);
+    CHECK(string("Text123")==tm.getText());
+}
+
+//4.
+TEST (removeMedia, MediaBuilder)
+{
+    //Create Figure 1
+    std::stack<ComboMediaBuilder *> cmbs;
+    cmbs.push(new ComboMediaBuilder());
+    cmbs.top()->buildComboMedia();
+
+    cmbs.push(new ComboMediaBuilder());
+    cmbs.top()->buildComboMedia();
+
+    cmbs.push(new ComboMediaBuilder());
+    cmbs.top()->buildComboMedia();
+
+    Rectangle r(10,0,15,5);
+    cmbs.top()->buildShapeMedia(&r);
+    Circle c(12,5,2);
+    cmbs.top()->buildShapeMedia(&c);
+
+    Media *cm1 = cmbs.top()->getMedia();
+    cmbs.pop();
+    cmbs.top()->buildAddComboMedia(cm1);
+
+    Rectangle r2(0,0,25,20);
+    cmbs.top()->buildShapeMedia(&r2);
+
+    Media *cm2 = cmbs.top()->getMedia();
+    cmbs.pop();
+    cmbs.top()->buildAddComboMedia(cm2);
+
+    Triangle t(0,20,16,32,25,20);
+    cmbs.top()->buildShapeMedia(&t);
+
+    Media* m=cmbs.top()->getMedia();
+
+    //Create end
+
+    ShapeMedia deleteSM(&r2);
+    m->removeMedia(&deleteSM);
+
+    DescriptionVisitor dv;
+    m->accept(&dv);
+    cout << dv.getDescription() << endl;
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )") == dv.getDescription());
+}
+
+
+
+
 
 #endif // UTSHAPES_H_INCLUDED
