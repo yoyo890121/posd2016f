@@ -9,6 +9,7 @@ class ShapeMediaBuilder : public MediaBuilder
 public:
     void buildComboMedia() {}
     void buildShapeMedia(Shape * s);
+    virtual void buildAddComboMedia(Media * m){};
     Media *getMedia();
 private:
     ShapeMedia * smedia;

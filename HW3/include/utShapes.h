@@ -10,6 +10,10 @@
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
 #include "TextMedia.h"
+#include "Document.h"
+#include "MyDocument.h"
+#include "MediaDirector.h"
+
 #include <vector>
 #include <iostream>
 
@@ -274,35 +278,35 @@ TEST (ShapeMediaBuilder, MediaBuilder)
 TEST (ComboMediaBuilder, MediaBuilder)
 {
     std::stack<ComboMediaBuilder *> cmbs;
-    cmbs.push(new ComboMediaBuilder());
+    cmbs.push(new ComboMediaBuilder()); //combo(
     cmbs.top()->buildComboMedia();
 
-    cmbs.push(new ComboMediaBuilder());
+    cmbs.push(new ComboMediaBuilder()); //combo(
     cmbs.top()->buildComboMedia();
 
-    cmbs.push(new ComboMediaBuilder());
+    cmbs.push(new ComboMediaBuilder()); //combo(
     cmbs.top()->buildComboMedia();
 
-    Rectangle r(10,0,15,5);
+    Rectangle r(10,0,15,5); //r(10 0 15 5)
     cmbs.top()->buildShapeMedia(&r);
-    Circle c(12,5,2);
+    Circle c(12,5,2); //c(12 5 2)
     cmbs.top()->buildShapeMedia(&c);
 
-    Media *cm1 = cmbs.top()->getMedia();
+    Media *cm1 = cmbs.top()->getMedia(); //)
     cmbs.pop();
     cmbs.top()->buildAddComboMedia(cm1);
 
-    Rectangle r2(0,0,25,20);
+    Rectangle r2(0,0,25,20); //r(0 0 25 20)
     cmbs.top()->buildShapeMedia(&r2);
 
-    Media *cm2 = cmbs.top()->getMedia();
+    Media *cm2 = cmbs.top()->getMedia(); //)
     cmbs.pop();
     cmbs.top()->buildAddComboMedia(cm2);
 
-    Triangle t(0,20,16,32,25,20);
+    Triangle t(0,20,16,32,25,20); //t(0 20 16 32 25 20)
     cmbs.top()->buildShapeMedia(&t);
 
-    Media *m=cmbs.top()->getMedia();
+    Media *m=cmbs.top()->getMedia(); //)
 
     DescriptionVisitor dv;
     m->accept(&dv);
@@ -364,12 +368,59 @@ TEST (removeMedia, MediaBuilder)
 
     DescriptionVisitor dv;
     m->accept(&dv);
-    cout << dv.getDescription() << endl;
+    //cout << dv.getDescription() << endl;
     CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )") == dv.getDescription());
 }
 
+//HW5
+//1.
+TEST (readFile, Document)
+{
+    string myShapeString;
+    Document* doc=new MyDocument();
+    myShapeString=doc->openDocument("myShape.txt");
+    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == myShapeString);
+}
 
+TEST (notExistFile, Document)
+{
+    string myShapeString;
+    try {
+        Document* doc=new MyDocument();
+        myShapeString=doc->openDocument("a.txt");
+        FAIL("should not be here");
+    } catch (string s) {
+        CHECK(std::string("file is not existed.") == s);
+    }
+}
 
+//2.
+TEST (Director, MediaDirector)
+{
+    string myShapeString;
+    Document* doc=new MyDocument();
+    myShapeString=doc->openDocument("myShape.txt");
+    MediaDirector md;
+    md.concrete(myShapeString);
+    std::stack<MediaBuilder *> mbs;
+    md.setMediaBuilder(&mbs);
+    Media *m=mbs.top()->getMedia();
+    DescriptionVisitor dv;
+    m->accept(&dv);
+    cout << dv.getDescription() << endl;
+}
 
+//TEST (testString, MediaDirector)
+//{
+//    string str("t(1 1 2 2 3 4)");
+//    MediaDirector md;
+//    md.concrete(str);
+//    std::stack<MediaBuilder *> mbs;
+//    md.setMediaBuilder(&mbs);
+//    Media *m=mbs.top()->getMedia();
+//    DescriptionVisitor dv;
+//    m->accept(&dv);
+//    cout << dv.getDescription() << endl;
+//}
 
 #endif // UTSHAPES_H_INCLUDED

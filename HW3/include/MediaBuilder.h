@@ -9,6 +9,7 @@ class MediaBuilder
  public:
     virtual void buildComboMedia() = 0;
     virtual void buildShapeMedia(Shape * s) = 0;
+    virtual void buildAddComboMedia(Media * m)=0;
     virtual Media * getMedia() =0;
 };
 

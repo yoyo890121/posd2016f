@@ -193,7 +193,7 @@
 
 1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testregistry.h
 
-1479732068 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
+1480506470 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
 	"..\..\cppunitlite\TestHarness.h"
 	"Circle.h"
 	"Rectangle.h"
@@ -203,6 +203,9 @@
 	"ShapeMediaBuilder.h"
 	"ComboMediaBuilder.h"
 	"TextMedia.h"
+	"Document.h"
+	"MyDocument.h"
+	"MediaDirector.h"
 	<vector>
 	<iostream>
 	<stack>
@@ -295,7 +298,7 @@
 1477551147 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mediabuilder.cpp
 	"MediaBuilder.h"
 
-1477992930 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediabuilder.h
+1480506166 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediabuilder.h
 	"Media.h"
 
 1478000150 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\combomediabuilder.cpp
@@ -311,7 +314,7 @@
 	"ShapeMedia.h"
 	"ComboMedia.h"
 
-1477992276 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemediabuilder.h
+1480506192 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\shapemediabuilder.h
 	"MediaBuilder.h"
 
 1478066863 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\textmedia.cpp
@@ -322,4 +325,34 @@
 	"Media.h"
 	"Rectangle.h"
 	"Shape.h"
+
+1479733035 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\document.cpp
+	"Document.h"
+
+1479876354 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\document.h
+	<string>
+
+1480506452 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mediadirector.cpp
+	"MediaDirector.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	<sstream>
+	<iostream>
+
+1480506089 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mediadirector.h
+	<stack>
+	<string>
+	<vector>
+	"MediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"ShapeMediaBuilder.h"
+
+1480421443 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mydocument.cpp
+	"MyDocument.h"
+
+1479992394 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\mydocument.h
+	"Document.h"
+	<string>
+	<fstream>
 
