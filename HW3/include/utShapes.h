@@ -13,7 +13,7 @@
 #include "Document.h"
 #include "MyDocument.h"
 #include "MediaDirector.h"
-
+#include "TextUI.h"
 #include <vector>
 #include <iostream>
 
@@ -113,18 +113,20 @@ TEST(second,sortByDecreasingPerimeter)
 //3. Compose rTall and cSmall into a new shape, compute perimeter.
 //4. Compose rTall and cSmall into a new shape, compute area.
 // separate ComboShape into ComboMedia and Shape
-/*
+
 TEST(addShape,combo)
 {
     Rectangle rTall(1,10,2,8); //area=16 ,perimeter=20
+    ShapeMedia sR1(&rTall) ;
     Circle cSmall(2,1,1); //area=3 ,perimeter=6
-    std::vector<Shape *> ss {&rTall};
-    ComboShape cShape(ss);
-    cShape.add(&cSmall);
+    ShapeMedia sC1(&cSmall) ;
+    std::vector<Media *> ss {&sR1};
+    ComboMedia cShape(ss);
+    cShape.add(&sC1);
     DOUBLES_EQUAL(26,cShape.perimeter(),epsilon);
     DOUBLES_EQUAL(19,cShape.area(),epsilon);
 }
-*/
+
 
 TEST ( seven, media )
 {
@@ -374,41 +376,41 @@ TEST (removeMedia, MediaBuilder)
 
 //HW5
 //1.
-TEST (readFile, Document)
-{
-    string myShapeString;
-    Document* doc=new MyDocument();
-    myShapeString=doc->openDocument("myShape.txt");
-    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == myShapeString);
-}
-
-TEST (notExistFile, Document)
-{
-    string myShapeString;
-    try {
-        Document* doc=new MyDocument();
-        myShapeString=doc->openDocument("a.txt");
-        FAIL("should not be here");
-    } catch (string s) {
-        CHECK(std::string("file is not existed.") == s);
-    }
-}
-
-//2.
-TEST (Director, MediaDirector)
-{
-    string myShapeString;
-    Document* doc=new MyDocument();
-    myShapeString=doc->openDocument("myShape.txt");
-    MediaDirector md;
-    md.concrete(myShapeString);
-    std::stack<MediaBuilder *> mbs;
-    md.setMediaBuilder(&mbs);
-    Media *m=mbs.top()->getMedia();
-    DescriptionVisitor dv;
-    m->accept(&dv);
-    cout << dv.getDescription() << endl;
-}
+//TEST (readFile, Document)
+//{
+//    string myShapeString;
+//    Document* doc=new MyDocument();
+//    myShapeString=doc->openDocument("myShape.txt");
+//    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == myShapeString);
+//}
+//
+//TEST (notExistFile, Document)
+//{
+//    string myShapeString;
+//    try {
+//        Document* doc=new MyDocument();
+//        myShapeString=doc->openDocument("a.txt");
+//        FAIL("should not be here");
+//    } catch (string s) {
+//        CHECK(std::string("file is not existed.") == s);
+//    }
+//}
+//
+////2.
+//TEST (Director, MediaDirector)
+//{
+//    string myShapeString;
+//    Document* doc=new MyDocument();
+//    myShapeString=doc->openDocument("myShape.txt");
+//    MediaDirector md;
+//    md.concrete(myShapeString);
+//    std::stack<MediaBuilder *> mbs;
+//    md.setMediaBuilder(&mbs);
+//    Media *m=mbs.top()->getMedia();
+//    DescriptionVisitor dv;
+//    m->accept(&dv);
+//    //cout << dv.getDescription() << endl;
+//}
 
 //TEST (testString, MediaDirector)
 //{
@@ -422,5 +424,41 @@ TEST (Director, MediaDirector)
 //    m->accept(&dv);
 //    cout << dv.getDescription() << endl;
 //}
+
+
+//HW6
+//1.
+//TEST (defCircle,TextUI)
+//{
+//    TextUI test;
+//    string input("def cSmall = Circle(2,1,1)");
+//    test.processCommand(input);
+//}
+//
+//TEST (defRectangle,TextUI)
+//{
+//    TextUI test;
+//    string input("def rTall = Rectangle(1,10,2,8)");
+//    test.processCommand(input);
+//}
+//
+//
+
+TEST (defComboMedia,TextUI)
+{
+    TextUI test;
+    test.processCommand("def cSmall = Circle(2,1,1)");
+    test.processCommand("def rTall = Rectangle(1,10,2,8)");
+    test.processCommand("def comboExclamation = combo{rTall,cSmall}");
+    test.processCommand("rTall.area?");
+    test.processCommand("comboExclamation.perimeter?");
+    test.processCommand("save comboExclamation to \"myShapes.txt\"");
+    test.processCommand("delete rTall from comboExclamation");
+    test.processCommand("show");
+    test.processCommand("delete rTall");
+    test.processCommand("show");
+    test.processCommand("def cMale = Circle(3,2,1)");
+    test.processCommand("add cMale to comboExclamation");
+}
 
 #endif // UTSHAPES_H_INCLUDED

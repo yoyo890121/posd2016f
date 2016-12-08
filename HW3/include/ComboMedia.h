@@ -10,7 +10,10 @@ private:
     std::vector<Media*> media;
 public:
     ComboMedia () {}
-    ComboMedia( std::vector<Media*> m ) : media(m) {}
+    ComboMedia (std::vector<Media*> m) : media(m) {}
+    std::vector<Media*> getMedia() {
+        return media;
+    }
     double area() const {
         double total =0;
         for (Media *m: media)

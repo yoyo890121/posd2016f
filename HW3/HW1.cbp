@@ -52,6 +52,7 @@
 		<Unit filename="include/ShapeMedia.h" />
 		<Unit filename="include/ShapeMediaBuilder.h" />
 		<Unit filename="include/TextMedia.h" />
+		<Unit filename="include/TextUI.h" />
 		<Unit filename="include/Triangle.h" />
 		<Unit filename="include/utShapes.h" />
 		<Unit filename="main.cpp" />
@@ -72,6 +73,7 @@
 		<Unit filename="src/ShapeMedia.cpp" />
 		<Unit filename="src/ShapeMediaBuilder.cpp" />
 		<Unit filename="src/TextMedia.cpp" />
+		<Unit filename="src/TextUI.cpp" />
 		<Unit filename="src/Triangle.cpp" />
 		<Extensions>
 			<code_completion />

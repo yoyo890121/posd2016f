@@ -3,6 +3,7 @@
 #include "DescriptionVisitor.h"
 #include "AreaVisitor.h"
 #include "PerimeterVisitor.h"
+#include <vector>
 
 class Media {
 public :
@@ -15,6 +16,7 @@ public :
     virtual void removeMedia (Media *m) {
         throw std::string("Illegal");
     }
+    virtual std::vector<Media*> getMedia(){};
 };
 
 #endif // MEDIA_H

@@ -170,9 +170,10 @@
 	"ComboMedia.h"
 	<iostream>
 
-1476764977 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\main.cpp
+1481207232 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\main.cpp
 	"..\cppunitlite\TestHarness.h"
 	"utShapes.h"
+	"TextUI.h"
 
 1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testharness.h
 	"Test.h"
@@ -193,7 +194,7 @@
 
 1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testregistry.h
 
-1480506470 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
+1481207232 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
 	"..\..\cppunitlite\TestHarness.h"
 	"Circle.h"
 	"Rectangle.h"
@@ -206,6 +207,7 @@
 	"Document.h"
 	"MyDocument.h"
 	"MediaDirector.h"
+	"TextUI.h"
 	<vector>
 	<iostream>
 	<stack>
@@ -227,10 +229,11 @@
 	"Shape.h"
 	"Media.h"
 
-1478096796 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\media.h
+1481200780 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\media.h
 	"DescriptionVisitor.h"
 	"AreaVisitor.h"
 	"PerimeterVisitor.h"
+	<vector>
 
 1478079792 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\descriptionvisitor.h
 	"MediaVisitor.h"
@@ -244,7 +247,7 @@
 1478079163 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\perimetervisitor.h
 	"MediaVisitor.h"
 
-1479732115 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\combomedia.h
+1481200621 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\combomedia.h
 	<vector>
 	<algorithm>
 	"Media.h"
@@ -332,7 +335,7 @@
 1479876354 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\document.h
 	<string>
 
-1480506452 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mediadirector.cpp
+1480565963 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\mediadirector.cpp
 	"MediaDirector.h"
 	"Circle.h"
 	"Rectangle.h"
@@ -355,4 +358,25 @@
 	"Document.h"
 	<string>
 	<fstream>
+
+1481207002 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\textui.cpp
+	"TextUI.h"
+	"MediaDirector.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"ComboMedia.h"
+	"MediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"DescriptionVisitor.h"
+	<sstream>
+	<fstream>
+
+1481115751 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\textui.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Media.h"
 
