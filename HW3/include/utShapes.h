@@ -376,54 +376,54 @@ TEST (removeMedia, MediaBuilder)
 
 //HW5
 //1.
-//TEST (readFile, Document)
-//{
-//    string myShapeString;
-//    Document* doc=new MyDocument();
-//    myShapeString=doc->openDocument("myShape.txt");
-//    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == myShapeString);
-//}
-//
-//TEST (notExistFile, Document)
-//{
-//    string myShapeString;
-//    try {
-//        Document* doc=new MyDocument();
-//        myShapeString=doc->openDocument("a.txt");
-//        FAIL("should not be here");
-//    } catch (string s) {
-//        CHECK(std::string("file is not existed.") == s);
-//    }
-//}
-//
-////2.
-//TEST (Director, MediaDirector)
-//{
-//    string myShapeString;
-//    Document* doc=new MyDocument();
-//    myShapeString=doc->openDocument("myShape.txt");
-//    MediaDirector md;
-//    md.concrete(myShapeString);
-//    std::stack<MediaBuilder *> mbs;
-//    md.setMediaBuilder(&mbs);
-//    Media *m=mbs.top()->getMedia();
-//    DescriptionVisitor dv;
-//    m->accept(&dv);
-//    //cout << dv.getDescription() << endl;
-//}
+TEST (readFile, Document)
+{
+    string myShapeString;
+    Document* doc=new MyDocument();
+    myShapeString=doc->openDocument("myShape.txt");
+    CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == myShapeString);
+}
 
-//TEST (testString, MediaDirector)
-//{
-//    string str("t(1 1 2 2 3 4)");
-//    MediaDirector md;
-//    md.concrete(str);
-//    std::stack<MediaBuilder *> mbs;
-//    md.setMediaBuilder(&mbs);
-//    Media *m=mbs.top()->getMedia();
-//    DescriptionVisitor dv;
-//    m->accept(&dv);
-//    cout << dv.getDescription() << endl;
-//}
+TEST (notExistFile, Document)
+{
+    string myShapeString;
+    try {
+        Document* doc=new MyDocument();
+        myShapeString=doc->openDocument("a.txt");
+        FAIL("should not be here");
+    } catch (string s) {
+        CHECK(std::string("file is not existed.") == s);
+    }
+}
+
+//2.
+TEST (Director, MediaDirector)
+{
+    string myShapeString;
+    Document* doc=new MyDocument();
+    myShapeString=doc->openDocument("myShape.txt");
+    MediaDirector md;
+    md.concrete(myShapeString);
+    std::stack<MediaBuilder *> mbs;
+    md.setMediaBuilder(&mbs);
+    Media *m=mbs.top()->getMedia();
+    DescriptionVisitor dv;
+    m->accept(&dv);
+    //cout << dv.getDescription() << endl;
+}
+
+TEST (testString, MediaDirector)
+{
+    string str("t(1 1 2 2 3 4)");
+    MediaDirector md;
+    md.concrete(str);
+    std::stack<MediaBuilder *> mbs;
+    md.setMediaBuilder(&mbs);
+    Media *m=mbs.top()->getMedia();
+    DescriptionVisitor dv;
+    m->accept(&dv);
+    //cout << dv.getDescription() << endl;
+}
 
 
 //HW6
@@ -444,21 +444,21 @@ TEST (removeMedia, MediaBuilder)
 //
 //
 
-TEST (defComboMedia,TextUI)
-{
-    TextUI test;
-    test.processCommand("def cSmall = Circle(2,1,1)");
-    test.processCommand("def rTall = Rectangle(1,10,2,8)");
-    test.processCommand("def comboExclamation = combo{rTall,cSmall}");
-    test.processCommand("rTall.area?");
-    test.processCommand("comboExclamation.perimeter?");
-    test.processCommand("save comboExclamation to \"myShapes.txt\"");
-    test.processCommand("delete rTall from comboExclamation");
-    test.processCommand("show");
-    test.processCommand("delete rTall");
-    test.processCommand("show");
-    test.processCommand("def cMale = Circle(3,2,1)");
-    test.processCommand("add cMale to comboExclamation");
-}
+//TEST (defComboMedia,TextUI)
+//{
+//    TextUI test;
+//    test.processCommand("def cSmall = Circle(2,1,1)");
+//    test.processCommand("def rTall = Rectangle(1,10,2,8)");
+//    test.processCommand("def comboExclamation = combo{rTall,cSmall}");
+//    test.processCommand("rTall.area?");
+//    test.processCommand("comboExclamation.perimeter?");
+//    test.processCommand("save comboExclamation to \"myShapes.txt\"");
+//    test.processCommand("delete rTall from comboExclamation");
+//    test.processCommand("show");
+//    test.processCommand("delete rTall");
+//    test.processCommand("show");
+//    test.processCommand("def cMale = Circle(3,2,1)");
+//    test.processCommand("add cMale to comboExclamation");
+//}
 
 #endif // UTSHAPES_H_INCLUDED

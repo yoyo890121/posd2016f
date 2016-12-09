@@ -11,15 +11,17 @@
 #include <sstream>
 #include <fstream>
 
-TextUI::TextUI() {
-//    while (cout <<":- ") {
-//        getline(cin,input);
-//        processCommand(input);
-//    }
+TextUI::TextUI() {}
+
+void TextUI::start() {
+        while (cout <<":- ") {
+        getline(cin,input);
+        processCommand(input);
+    }
 }
 
 void TextUI::processCommand(string cmd) {
-    cout <<cmd<<endl;
+    //cout <<cmd<<endl;
     stringstream ss(cmd);
     string instruction;
     ss >>instruction;

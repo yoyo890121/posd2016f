@@ -10,9 +10,10 @@ using namespace std;
 class TextUI {
 public:
     TextUI();
+    void start();
     void processCommand(string cmd);
-    map<string, Media*> mediaList;
 private:
+    map<string, Media*> mediaList;
     string input;
     void defShapeMedia(string name, string type, string numbers);
     void defComboMedia(string name, string shapeString);

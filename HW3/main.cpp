@@ -6,6 +6,7 @@ int main()
 {
     TestResult tr;
     TestRegistry::runAllTests(tr);
-    //TextUI textUI;
+    TextUI textUI;
+    textUI.start();
     return 0;
 }
