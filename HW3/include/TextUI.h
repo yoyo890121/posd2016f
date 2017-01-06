@@ -12,11 +12,14 @@ public:
     TextUI();
     void start();
     void processCommand(string cmd);
-private:
-    map<string, Media*> mediaList;
-    string input;
     void defShapeMedia(string name, string type, string numbers);
     void defComboMedia(string name, string shapeString);
+    void addMedia(string mediaName, string comboMediaName);
+    void deleteMedia(string mediaName);
+    void deleteFromComboMedia(string mediaName, string comboMediaName);
+    map<string, Media*> mediaList;
+private:
+    string input;
 };
 vector<string> split(const string &source, const char &delim);
 #endif // TEXTUI_H

@@ -8,18 +8,37 @@
 #include "ComboMediaBuilder.h"
 #include "ShapeMediaBuilder.h"
 #include "DescriptionVisitor.h"
+#include "CommandManager.h"
 #include <sstream>
 #include <fstream>
 
 TextUI::TextUI() {}
 
 void TextUI::start() {
-        while (cout <<":- ") {
-        getline(cin,input);
-        processCommand(input);
-    }
+//    CommandManager* cm=new CommandManager();
+//    while (cout <<":- ") {
+//        getline(cin,input);
+//        if (cin.eof()) {
+//            //undo
+//            cm->undoCommand();
+//            cin.clear();
+//            continue;
+//        }
+//        if (int(input.at(0)==25)) {
+//            //redo
+//            cm->redoCommand();
+//            continue;
+//        }
+//        //executeCommand
+//        cm->executeCommand();
+//    }
 }
 
+//void TextUI::processCommand(string cmd) {
+//
+//}
+
+/*
 void TextUI::processCommand(string cmd) {
     //cout <<cmd<<endl;
     stringstream ss(cmd);
@@ -91,28 +110,7 @@ void TextUI::processCommand(string cmd) {
     if (instruction=="add") {
         string mediaName,check,comboMediaName;
         ss >>mediaName>>check>>comboMediaName;
-        auto comboMediaIt=mediaList.find(comboMediaName);
-        auto mediaIt=mediaList.find(mediaName);
-        if (comboMediaIt!=mediaList.end() && mediaIt!=mediaList.end()) {
-            Media* combo=comboMediaIt->second;
-            combo->add(mediaIt->second);
-            DescriptionVisitor dv;
-            combo->accept(&dv);
-            //use Media* to get mediaName
-            cout <<">> "<<comboMediaName<<" = "<<comboMediaName<<"{";
-            vector<Media*> media=combo->getMedia();
-            for (auto it:media) {
-                for (auto mediaListIt:mediaList) {
-                    if (mediaListIt.second==it) {
-                        cout<<mediaListIt.first<<" ";
-                    }
-                }
-            }
-            cout <<"}= "<<dv.getDescription()<<endl;
-        }
-        else {
-            cout <<"name not found"<<endl;
-        }
+        addMedia(mediaName, comboMediaName);
     }
     if (instruction=="delete") {
         string mediaName,check,comboMediaName;
@@ -120,15 +118,9 @@ void TextUI::processCommand(string cmd) {
         auto mediaIt=mediaList.find(mediaName);
         if (mediaIt!=mediaList.end()) {
             if (check=="from") {
-                auto comboMediaIt=mediaList.find(comboMediaName);
-                if (comboMediaIt!=mediaList.end()) {
-                    Media* combo=comboMediaIt->second;
-                    combo->removeMedia(mediaIt->second);
-                } else {
-                    cout <<"name not found"<<endl;
-                }
+                deleteFromComboMedia(mediaName, comboMediaName);
             } else {
-                mediaList.erase(mediaIt);
+                deleteMedia(mediaName);
             }
         } else {
             cout <<"name not found"<<endl;
@@ -157,6 +149,7 @@ void TextUI::processCommand(string cmd) {
         }
     }
 }
+*/
 
 void TextUI::defShapeMedia(string name, string type, string numbers) {
     vector<string> parameter=split(numbers,',');
@@ -216,9 +209,57 @@ void TextUI::defComboMedia(string name, string shapeString) {
     auto it=mediaList.find(name);
     if (it != mediaList.end()) {
         cout <<">> Combo "<<name<<endl;
-    }
-    else {
+    } else {
         cout <<"Add combo fail"<<endl;
+    }
+}
+
+void TextUI::addMedia(string mediaName, string comboMediaName) {
+    auto comboMediaIt=mediaList.find(comboMediaName);
+    auto mediaIt=mediaList.find(mediaName);
+    if (comboMediaIt!=mediaList.end() && mediaIt!=mediaList.end()) {
+        Media* combo=comboMediaIt->second;
+        combo->add(mediaIt->second);
+        DescriptionVisitor dv;
+        combo->accept(&dv);
+        //use Media* to get mediaName
+        cout <<">> "<<comboMediaName<<" = "<<comboMediaName<<"{";
+        vector<Media*> media=combo->getMedia();
+        for (auto it:media) {
+            for (auto mediaListIt:mediaList) {
+                if (mediaListIt.second==it) {
+                    cout<<mediaListIt.first<<" ";
+                }
+            }
+        }
+        cout <<"}= "<<dv.getDescription()<<endl;
+    } else {
+        cout <<"name not found"<<endl;
+    }
+}
+
+void TextUI::deleteMedia(string mediaName) {
+    auto mediaIt=mediaList.find(mediaName);
+    if (mediaIt!=mediaList.end()) {
+        mediaList.erase(mediaIt);
+    } else {
+        cout <<"name not found"<<endl;
+    }
+}
+
+void TextUI::deleteFromComboMedia(string mediaName, string comboMediaName) {
+    auto mediaIt=mediaList.find(mediaName);
+    if (mediaIt!=mediaList.end()) {
+        auto comboMediaIt=mediaList.find(comboMediaName);
+        if (comboMediaIt!=mediaList.end()) {
+            Media* combo=comboMediaIt->second;
+            combo->removeMedia(mediaIt->second);
+        } else {
+            cout <<"name not found"<<endl;
+        }
+
+    } else {
+        cout <<"name not found"<<endl;
     }
 }
 

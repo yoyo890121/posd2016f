@@ -14,6 +14,10 @@
 #include "MyDocument.h"
 #include "MediaDirector.h"
 #include "TextUI.h"
+#include "CommandManager.h"
+#include "AddCommand.h"
+#include "DefCommand.h"
+#include "DeleteCommand.h"
 #include <vector>
 #include <iostream>
 
@@ -22,16 +26,14 @@ const double epsilon = 0.000001;
 
 //HW1
 //1. Computing  the perimeter of a circle
-TEST(first,Circle)
-{
+TEST(first,Circle) {
     Circle circ(0,0,10);
     DOUBLES_EQUAL(300,circ.area(),epsilon);
     DOUBLES_EQUAL(60,circ.perimeter(),epsilon);
 }
 
 //2. Computing  the perimeter of a rectangle
-TEST(second, Rectangle)
-{
+TEST(second, Rectangle) {
     Rectangle rect(0,0,4,2);
     DOUBLES_EQUAL(8,rect.area(),epsilon);
     DOUBLES_EQUAL(12,rect.perimeter(),epsilon);
@@ -40,15 +42,13 @@ TEST(second, Rectangle)
 //3. Creating a triangle given three points
 //4. Computing  the perimeter of a triangle
 //5. Computing  the area of a triangle
-TEST(third,Triangle)
-{
+TEST(third,Triangle) {
     Triangle tri(0,0,0,3,4,0);
     DOUBLES_EQUAL(6,tri.area(),epsilon);
     DOUBLES_EQUAL(12,tri.perimeter(),epsilon);
 }
 
-TEST(Illegal,Triangle)
-{
+TEST(Illegal,Triangle) {
     try {
         Triangle tri(0,0,0,1,0,2);
         FAIL("should not be here");
@@ -58,8 +58,7 @@ TEST(Illegal,Triangle)
 }
 
 //6. Computing the sum of perimeters of a number of shapes, including at least one of each of rectangle, circle and triangle
-TEST (fifth, sumOfArea)
-{
+TEST (fifth, sumOfArea) {
     Rectangle r1(0,0,4,2); //area=8, perimeter=12
     Circle c1(0,0,10); //area=300, perimeter=60
     Triangle t1(0,0,0,3,4,0); //area=6 ,perimeter=12
@@ -73,8 +72,7 @@ TEST (fifth, sumOfArea)
 
 //HW2
 //1. maxArea
-TEST(first, maxArea)
-{
+TEST(first, maxArea) {
     Rectangle r1(0,0,4,2);
     Circle c1(0,0,10);
     Triangle t1(0,0,0,3,4,0);
@@ -86,8 +84,7 @@ TEST(first, maxArea)
 }
 
 //2. sortByDecreasingPerimeter
-TEST(second,sortByDecreasingPerimeter)
-{
+TEST(second,sortByDecreasingPerimeter) {
     Rectangle r1(0,0,4,2);
     Circle c1(0,0,10);
     Triangle t1(0,0,0,3,4,0);
@@ -114,8 +111,7 @@ TEST(second,sortByDecreasingPerimeter)
 //4. Compose rTall and cSmall into a new shape, compute area.
 // separate ComboShape into ComboMedia and Shape
 
-TEST(addShape,combo)
-{
+TEST(addShape,combo) {
     Rectangle rTall(1,10,2,8); //area=16 ,perimeter=20
     ShapeMedia sR1(&rTall) ;
     Circle cSmall(2,1,1); //area=3 ,perimeter=6
@@ -128,15 +124,13 @@ TEST(addShape,combo)
 }
 
 
-TEST ( seven, media )
-{
+TEST ( seven, media ) {
     Rectangle r1(0,0,4,2);
     ShapeMedia sR1( &r1 ) ;
     DOUBLES_EQUAL(8,sR1.area(),epsilon);
 }
 
-TEST ( eight, comboMedia )
-{
+TEST ( eight, comboMedia ) {
     Rectangle r1(0,0,4,2);
     Rectangle r2(0,0,4,3);
     ShapeMedia sR1( &r1 ) ;
@@ -147,8 +141,7 @@ TEST ( eight, comboMedia )
 }
 
 //DescriptionVisitor
-TEST (ShapeMedia, DescriptionVisitor)
-{
+TEST (ShapeMedia, DescriptionVisitor) {
     Rectangle r1(0,0,4,2);
     ShapeMedia sR1( &r1 ) ;
     DescriptionVisitor dv;
@@ -158,8 +151,7 @@ TEST (ShapeMedia, DescriptionVisitor)
 }
 
 
-TEST (ComboMedia, DescriptionVisitor)
-{
+TEST (ComboMedia, DescriptionVisitor) {
     Rectangle r1(0,0,4,2);
     Circle r2(0,0,10);
     ShapeMedia sR1( &r1 ) ;
@@ -173,8 +165,7 @@ TEST (ComboMedia, DescriptionVisitor)
 }
 
 
-TEST (IllegalAdd, ShapeMedia)
-{
+TEST (IllegalAdd, ShapeMedia) {
     Rectangle r1(0,0,4,2);
     Circle r2(0,0,10);
     ShapeMedia sR1( &r1 ) ;
@@ -189,8 +180,7 @@ TEST (IllegalAdd, ShapeMedia)
 
 //HW3
 //1. Regular hexagon
-TEST (RegularHexagon, ComboMedia)
-{
+TEST (RegularHexagon, ComboMedia) {
     Rectangle r1(0,2*sqrt(3),2*sqrt(3),2);
     Triangle t1(0,0,-1,sqrt(3),0,2*sqrt(3));
     Triangle t2(2,0,3,sqrt(3),2,2*sqrt(3));
@@ -262,8 +252,7 @@ TEST (ComboMedia5, MediaBuilder) {
 
 //HW4
 //1.
-TEST (ShapeMediaBuilder, MediaBuilder)
-{
+TEST (ShapeMediaBuilder, MediaBuilder) {
     ShapeMediaBuilder smb;
     Circle c(0,0,5);
     smb.buildShapeMedia(&c);
@@ -277,8 +266,7 @@ TEST (ShapeMediaBuilder, MediaBuilder)
 }
 
 //2.
-TEST (ComboMediaBuilder, MediaBuilder)
-{
+TEST (ComboMediaBuilder, MediaBuilder) {
     std::stack<ComboMediaBuilder *> cmbs;
     cmbs.push(new ComboMediaBuilder()); //combo(
     cmbs.top()->buildComboMedia();
@@ -318,8 +306,7 @@ TEST (ComboMediaBuilder, MediaBuilder)
 }
 
 //3.
-TEST (TextMedia, MediaBuilder)
-{
+TEST (TextMedia, MediaBuilder) {
     Rectangle r(10,10,10,10);
     std::string s("Text123");
     TextMedia tm(&r,s);
@@ -329,8 +316,7 @@ TEST (TextMedia, MediaBuilder)
 }
 
 //4.
-TEST (removeMedia, MediaBuilder)
-{
+TEST (removeMedia, MediaBuilder) {
     //Create Figure 1
     std::stack<ComboMediaBuilder *> cmbs;
     cmbs.push(new ComboMediaBuilder());
@@ -376,16 +362,14 @@ TEST (removeMedia, MediaBuilder)
 
 //HW5
 //1.
-TEST (readFile, Document)
-{
+TEST (readFile, Document) {
     string myShapeString;
     Document* doc=new MyDocument();
     myShapeString=doc->openDocument("myShape.txt");
     CHECK(string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))") == myShapeString);
 }
 
-TEST (notExistFile, Document)
-{
+TEST (notExistFile, Document) {
     string myShapeString;
     try {
         Document* doc=new MyDocument();
@@ -397,8 +381,7 @@ TEST (notExistFile, Document)
 }
 
 //2.
-TEST (Director, MediaDirector)
-{
+TEST (Director, MediaDirector) {
     string myShapeString;
     Document* doc=new MyDocument();
     myShapeString=doc->openDocument("myShape.txt");
@@ -412,8 +395,7 @@ TEST (Director, MediaDirector)
     //cout << dv.getDescription() << endl;
 }
 
-TEST (testString, MediaDirector)
-{
+TEST (testString, MediaDirector) {
     string str("t(1 1 2 2 3 4)");
     MediaDirector md;
     md.concrete(str);
@@ -460,5 +442,255 @@ TEST (testString, MediaDirector)
 //    test.processCommand("def cMale = Circle(3,2,1)");
 //    test.processCommand("add cMale to comboExclamation");
 //}
+
+//HW7
+
+//4. definition
+TEST (DefRectangle, DefCommand) {
+    TextUI* application=new TextUI();
+    DefCommand def(application);
+    def.execute("r = Rectangle(0,0,10,10)");
+    auto it=application->mediaList.find("r");
+    DescriptionVisitor dv,dv2;
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+    CHECK(string("r(0 0 10 10) ") == dv.getDescription());
+
+    def.undo();
+    it=application->mediaList.find("r");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    CHECK(application->mediaList.empty() == true);
+
+    def.redo();
+    it=application->mediaList.find("r");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv2);
+    }
+    CHECK(string("r(0 0 10 10) ") == dv2.getDescription());
+}
+
+TEST (DefCombo, DefCommand) {
+    TextUI* application=new TextUI();
+    DefCommand def(application);
+    def.execute("cSmall = Circle(2,1,1)");
+    def.execute("rTall = Rectangle(1,10,2,8)");
+    def.execute("comboExclamation = combo{rTall,cSmall}");
+    auto it=application->mediaList.find("comboExclamation");
+    DescriptionVisitor dv,dv2;
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv.getDescription());
+    LONGS_EQUAL(application->mediaList.size(), 3);
+
+    def.undo();
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    LONGS_EQUAL(application->mediaList.size(), 2);
+
+    def.redo();
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv2);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv2.getDescription());
+    LONGS_EQUAL(application->mediaList.size(), 3);
+}
+
+//3. add
+TEST(Add, AddCommand) {
+    TextUI* application=new TextUI();
+    DefCommand def(application);
+    AddCommand add(application);
+    def.execute("cSmall = Circle(2,1,1)");
+    def.execute("rTall = Rectangle(1,10,2,8)");
+    def.execute("comboExclamation = combo{rTall,cSmall}");
+    def.execute("cMale = Circle(3,2,1)");
+    add.execute("cMale to comboExclamation");
+    auto it=application->mediaList.find("comboExclamation");
+    DescriptionVisitor dv,dv2,dv3;
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) c(3 2 1) )") == dv.getDescription());
+
+    add.undo();
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv2);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv2.getDescription());
+
+    add.redo();
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv3);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) c(3 2 1) )") == dv3.getDescription());
+}
+
+//5. delete
+TEST(DelFromComboMedia, DeleteCommand)
+{
+    TextUI* application=new TextUI();
+    DefCommand def(application);
+    DeleteCommand del(application);
+    def.execute("cSmall = Circle(2,1,1)");
+    def.execute("rTall = Rectangle(1,10,2,8)");
+    def.execute("comboExclamation = combo{rTall,cSmall}");
+    del.execute("cSmall from comboExclamation");
+    auto it=application->mediaList.find("comboExclamation");
+    DescriptionVisitor dv,dv2,dv3;
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+    CHECK(string("combo(r(1 10 2 8) )") == dv.getDescription());
+
+    del.undo();
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv2);
+    }
+
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv2.getDescription());
+
+    del.redo();
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv3);
+    }
+    CHECK(string("combo(r(1 10 2 8) )") == dv3.getDescription());
+}
+
+TEST(DelShape, DeleteCommand)
+{
+    TextUI* application=new TextUI();
+    DefCommand def(application);
+    DeleteCommand del(application);
+    def.execute("r = Rectangle(0,0,10,10)");
+    del.execute("r");
+    auto it=application->mediaList.find("r");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    CHECK(application->mediaList.empty() == true);
+
+    del.undo();
+    it=application->mediaList.find("r");
+    DescriptionVisitor dv;
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+    CHECK(string("r(0 0 10 10) ") == dv.getDescription());
+
+    del.redo();
+    it=application->mediaList.find("r");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    CHECK(application->mediaList.empty() == true);
+}
+
+TEST(DelCombo, DeleteCommand)
+{
+    TextUI* application=new TextUI();
+    DefCommand def(application);
+    DeleteCommand del(application);
+    def.execute("cSmall = Circle(2,1,1)");
+    def.execute("rTall = Rectangle(1,10,2,8)");
+    def.execute("comboExclamation = combo{rTall,cSmall}");
+    del.execute("comboExclamation");
+    auto it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    LONGS_EQUAL(application->mediaList.size(), 2);
+
+    del.undo();
+    DescriptionVisitor dv;
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv.getDescription());
+    LONGS_EQUAL(application->mediaList.size(), 3);
+
+    del.redo();
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    LONGS_EQUAL(application->mediaList.size(), 2);
+}
+
+//2. CommandManager
+TEST(Def, CommandManager)
+{
+    TextUI* application=new TextUI();
+    CommandManager cm(application);
+    DescriptionVisitor dv,dv2,dv3,dv4;
+    cm.commandToExecute("def cSmall = Circle(2,1,1)");
+    auto it=application->mediaList.find("cSmall");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv);
+    }
+    CHECK(string("c(2 1 1) ") == dv.getDescription());
+
+    cm.commandToExecute("def rTall = Rectangle(1,10,2,8)");
+    cm.commandToExecute("def comboExclamation = combo{rTall,cSmall}");
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv2);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv2.getDescription());
+    LONGS_EQUAL(application->mediaList.size(), 3);
+
+    cm.undoCommand();
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    LONGS_EQUAL(application->mediaList.size(), 2);
+
+    cm.undoCommand();
+    it=application->mediaList.find("rTall");
+    if(it!=application->mediaList.end()) {
+        FAIL("Should not be here");
+    }
+    LONGS_EQUAL(application->mediaList.size(), 1);
+
+    cm.redoCommand();
+    it=application->mediaList.find("rTall");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv3);
+    }
+    //cout <<dv.getDescription()<<endl;
+    CHECK(string("r(1 10 2 8) ") == dv3.getDescription());
+
+    cm.redoCommand();
+    it=application->mediaList.find("comboExclamation");
+    if(it!=application->mediaList.end()) {
+        Media* m=it->second;
+        m->accept(&dv4);
+    }
+    CHECK(string("combo(r(1 10 2 8) c(2 1 1) )") == dv4.getDescription());
+}
 
 #endif // UTSHAPES_H_INCLUDED

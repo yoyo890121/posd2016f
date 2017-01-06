@@ -170,10 +170,11 @@
 	"ComboMedia.h"
 	<iostream>
 
-1481286523 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\main.cpp
+1483705570 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\main.cpp
 	"..\cppunitlite\TestHarness.h"
 	"utShapes.h"
 	"TextUI.h"
+	"CommandManager.h"
 
 1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testharness.h
 	"Test.h"
@@ -194,7 +195,7 @@
 
 1474605874 c:\users\½²©_§»\documents\github\posd2016f\cppunitlite\testregistry.h
 
-1481286553 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
+1483696022 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\utshapes.h
 	"..\..\cppunitlite\TestHarness.h"
 	"Circle.h"
 	"Rectangle.h"
@@ -208,6 +209,10 @@
 	"MyDocument.h"
 	"MediaDirector.h"
 	"TextUI.h"
+	"CommandManager.h"
+	"AddCommand.h"
+	"DefCommand.h"
+	"DeleteCommand.h"
 	<vector>
 	<iostream>
 	<stack>
@@ -359,7 +364,7 @@
 	<string>
 	<fstream>
 
-1481286495 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\textui.cpp
+1483606473 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\textui.cpp
 	"TextUI.h"
 	"MediaDirector.h"
 	"Circle.h"
@@ -370,13 +375,55 @@
 	"ComboMediaBuilder.h"
 	"ShapeMediaBuilder.h"
 	"DescriptionVisitor.h"
+	"CommandManager.h"
 	<sstream>
 	<fstream>
 
-1481286495 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\textui.h
+1483527982 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\textui.h
 	<iostream>
 	<string>
 	<vector>
 	<map>
 	"Media.h"
+
+1483438432 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\command.cpp
+	"Command.h"
+
+1483530829 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\command.h
+	<string>
+	"TextUI.h"
+
+1483696104 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\commandmanager.cpp
+	"CommandManager.h"
+	"AddCommand.h"
+	"DefCommand.h"
+	"DeleteCommand.h"
+	<sstream>
+	<iostream>
+
+1483694440 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\commandmanager.h
+	"Command.h"
+	<stack>
+
+1483534291 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\addcommand.cpp
+	"AddCommand.h"
+	<sstream>
+
+1483530829 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\addcommand.h
+	"Command.h"
+
+1483621495 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\defcommand.cpp
+	"DefCommand.h"
+	<sstream>
+	<iostream>
+
+1483521875 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\defcommand.h
+	"Command.h"
+
+1483697266 source:c:\users\½²©_§»\documents\github\posd2016f\hw3\src\deletecommand.cpp
+	"DeleteCommand.h"
+	<sstream>
+
+1483690110 c:\users\½²©_§»\documents\github\posd2016f\hw3\include\deletecommand.h
+	"Command.h"
 
